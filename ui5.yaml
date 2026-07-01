@@ -1,0 +1,32 @@
+specVersion: "2.4"
+metadata:
+  name: fin.test.rap.lr1
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        backend:
+          - path: /sap
+            url: https://ldai1uyt.wdf.sap.corp:44300
+            client: "900"
+            destination: UYTCLNT900
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://sapui5preview-sapui5.dispatcher.int.sap.eu2.hana.ondemand.com
+          version: snapshot-untested
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: fin.test.rap.lr1
+        ui5Theme: sap_fiori_3

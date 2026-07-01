@@ -1,0 +1,37 @@
+{
+	"fileName": "id_1637572038989_166_propertyChange",
+	"fileType": "change",
+	"changeType": "propertyChange",
+	"moduleName": "",
+	"reference": "fin.test.rap.lr1.Component",
+	"packageName": "$TMP",
+	"content": {
+		"property": "useVariantManagement",
+		"newValue": true
+	},
+	"selector": {
+		"id": "fin.test.rap.lr1::sap.suite.ui.generic.template.ObjectPage.view.Details::Travel--Booking::Table",
+		"type": "sap.ui.comp.smarttable.SmartTable",
+		"idIsLocal": false
+	},
+	"layer": "VENDOR",
+	"texts": {},
+	"namespace": "apps/fin.test.rap.lr1/changes/",
+	"projectId": "fin.test.rap.lr1",
+	"creation": "2021-11-22T09:07:41.595Z",
+	"originalLanguage": "EN",
+	"support": {
+		"generator": "sap.ui.rta.command",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.96.0",
+		"sourceChangeFileName": "",
+		"compositeCommand": "",
+		"command": "property"
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"jsOnly": false,
+	"variantReference": "",
+	"appDescriptorChange": false
+}

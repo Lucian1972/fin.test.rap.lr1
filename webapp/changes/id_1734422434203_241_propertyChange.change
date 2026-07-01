@@ -1,0 +1,29 @@
+{
+  "changeType": "propertyChange",
+  "reference": "fin.test.rap.lr1",
+  "namespace": "apps/fin.test.rap.lr1/changes/",
+  "creation": "2024-12-17T08:01:18.842Z",
+  "projectId": "fin.test.rap.lr1",
+  "packageName": "$TMP",
+  "support": {
+    "generator": "changeUtils: SAPFioriTools-propertyEditor",
+    "sapui5Version": "1.132.0-SNAPSHOT",
+    "command": "property"
+  },
+  "originalLanguage": "EN",
+  "layer": "VENDOR",
+  "fileType": "change",
+  "fileName": "id_1734422434203_241_propertyChange",
+  "content": {
+    "property": "showFullScreenButton",
+    "newValue": true
+  },
+  "texts": {},
+  "selector": {
+    "id": "fin.test.rap.lr1::sap.suite.ui.generic.template.ObjectPage.view.Details::Travel--Booking::Table",
+    "type": "sap.ui.comp.smarttable.SmartTable",
+    "idIsLocal": false
+  },
+  "dependentSelector": {},
+  "jsOnly": false
+}

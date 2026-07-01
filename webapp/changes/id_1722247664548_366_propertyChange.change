@@ -1,0 +1,29 @@
+{
+  "changeType": "propertyChange",
+  "reference": "fin.test.rap.lr1",
+  "namespace": "apps/fin.test.rap.lr1/changes/",
+  "creation": "2024-07-29T10:08:17.381Z",
+  "projectId": "fin.test.rap.lr1",
+  "packageName": "$TMP",
+  "support": {
+    "generator": "changeUtils: SAPFioriTools-propertyEditor",
+    "sapui5Version": "1.128.0-SNAPSHOT",
+    "command": "property"
+  },
+  "originalLanguage": "EN",
+  "layer": "VENDOR",
+  "fileType": "change",
+  "fileName": "id_1722247664548_366_propertyChange",
+  "content": {
+    "property": "useIconTabBar",
+    "newValue": false
+  },
+  "texts": {},
+  "selector": {
+    "id": "fin.test.rap.lr1::sap.suite.ui.generic.template.ObjectPage.view.Details::Travel--objectPage",
+    "type": "sap.uxap.ObjectPageLayout",
+    "idIsLocal": false
+  },
+  "dependentSelector": {},
+  "jsOnly": false
+}

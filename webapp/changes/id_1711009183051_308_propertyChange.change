@@ -1,0 +1,29 @@
+{
+  "changeType": "propertyChange",
+  "reference": "fin.test.rap.lr1",
+  "namespace": "apps/fin.test.rap.lr1/changes/",
+  "creation": "2024-03-21T08:20:28.058Z",
+  "projectId": "fin.test.rap.lr1",
+  "packageName": "$TMP",
+  "support": {
+    "generator": "changeUtils: SAPFioriTools-propertyEditor",
+    "sapui5Version": "1.123.0-SNAPSHOT",
+    "command": "property"
+  },
+  "originalLanguage": "EN",
+  "layer": "VENDOR",
+  "fileType": "change",
+  "fileName": "id_1711009183051_308_propertyChange",
+  "content": {
+    "property": "minAutoRowCount",
+    "newValue": 10
+  },
+  "texts": {},
+  "selector": {
+    "id": "fin.test.rap.lr1::sap.suite.ui.generic.template.ObjectPage.view.Details::Travel--Booking::gridTable",
+    "type": "sap.ui.table.Table",
+    "idIsLocal": false
+  },
+  "dependentSelector": {},
+  "jsOnly": false
+}

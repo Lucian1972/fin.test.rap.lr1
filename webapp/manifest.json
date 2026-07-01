@@ -1,0 +1,241 @@
+{
+  "_version": "1.50.0",
+  "sap.app": {
+    "id": "fin.test.rap.lr1",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "${project.version}"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "tags": {
+      "keywords": []
+    },
+    "ach": "FI-FIO-AR",
+    "resources": "resources.json",
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/M2_SB_TRAVEL_MDUU_02/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "M2_SB_TRAVEL_MDUU_02_VAN",
+            "annotation1"
+          ],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "M2_SB_TRAVEL_MDUU_02_VAN": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='M2_SB_TRAVEL_MDUU_02_VAN',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "localService/mainService/M2_SB_TRAVEL_MDUU_02_VAN.xml"
+        }
+      },
+      "annotation1": {
+        "type": "ODataAnnotation",
+        "uri": "annotations/annotation1.xml",
+        "settings": {
+          "localUri": "annotations/annotation1.xml"
+        }
+      }
+    },
+    "offline": false,
+    "sourceTemplate": {
+      "id": "ui5template.smartTemplate",
+      "version": "1.40.12",
+      "toolsId": "0c2d8c57-0c96-48d8-9ed9-a399fced7906"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "resources": {
+      "css": []
+    },
+    "dependencies": {
+      "minUI5Version": "1.98.0",
+      "libs": {
+        "sap.ui.core": {
+          "lazy": false
+        },
+        "sap.ui.generic.app": {
+          "lazy": false
+        },
+        "sap.suite.ui.generic.template": {
+          "lazy": false
+        },
+        "sap.m": {
+          "lazy": false
+        },
+        "sap.ui.comp": {
+          "lazy": false
+        }
+      },
+      "components": {}
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "refreshAfterChange": false,
+          "metadataUrlParams": {
+            "sap-value-list": "none"
+          }
+        }
+      }
+    },
+    "extends": {
+      "extensions": {}
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    }
+  },
+  "sap.ui.generic.app": {
+    "_version": "1.3.0",
+    "settings": {
+      "forceGlobalRefresh": false,
+      "objectPageHeaderType": "Dynamic",
+      "tableSettings": {
+        "createMode": "creationRows"
+      }
+    },
+    "pages": {
+      "ListReport|Travel": {
+        "entitySet": "Travel",
+        "component": {
+          "name": "sap.suite.ui.generic.template.ListReport",
+          "list": true,
+          "settings": {
+            "condensedTableLayout": true,
+            "smartVariantManagement": false,
+            "dataLoadSettings": {
+              "loadDataOnAppLaunch": "ifAnyFilterExist"
+            },
+            "filterSettings": {
+              "dateSettings": {
+                "useDateRange": true
+              }
+            },
+            "tableSettings": {
+              "type": "GridTable",
+              "condensedTableLayout": true,
+              "multiSelect": true,
+              "multiEdit": {
+                "enabled": true,
+                "annotationPath": "com.sap.vocabularies.UI.v1.FieldGroup#MultiEdit",
+                "ignoredFields": "CreatedBy,CreatedAt,LastChangedBy,LastChangedAt,LastChangedAtTravel"
+              },
+              "__createWithParameterDialog": {
+                "fields": {
+                  "AgencyID": {
+                    "path": "AgencyID"
+                  },
+                  "CustomerID": {
+                    "path": "CustomerID"
+                  },
+                  "BeginDate": {
+                    "path": "BeginDate"
+                  },
+                  "EndDate": {
+                    "path": "EndDate"
+                  },
+                  "Memo": {
+                    "path": "Memo"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "pages": {
+          "ObjectPage|Travel": {
+            "entitySet": "Travel",
+            "component": {
+              "name": "sap.suite.ui.generic.template.ObjectPage",
+              "settings": {
+                "condensedTableLayout": true,
+                "sections": {
+                  "Booking": {
+                    "tableSettings": {
+                      "type": "GridTable",
+                      "variantManagement": true,
+                      "multiSelect": true
+                    }
+                  }
+                }
+              }
+            },
+            "pages": {
+              "ObjectPage|to_Booking": {
+                "navigationProperty": "to_Booking",
+                "entitySet": "Booking",
+                "component": {
+                  "name": "sap.suite.ui.generic.template.ObjectPage",
+                  "settings": {
+                    "sections": {
+                      "BookingSupplement": {
+                        "tableSettings": {
+                          "type": "ResponsiveTable"
+                        }
+                      }
+                    }
+                  }
+                },
+                "pages": {
+                  "ObjectPage|to_BookSupplement": {
+                    "navigationProperty": "to_BookSupplement",
+                    "entitySet": "BookingSupplement",
+                    "component": {
+                      "name": "sap.suite.ui.generic.template.ObjectPage"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [
+      "F1564"
+    ],
+    "archeType": "transactional",
+    "cloudDevAdaptationStatus": "released"
+  },
+  "sap.platform.hcp": {
+    "uri": ""
+  }
+}
